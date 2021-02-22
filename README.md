@@ -1,6 +1,6 @@
 ## Desafio Back-End Developer ##
 
-- Preparando ambiente:
+### Preparando ambiente: ###
 
 1. Instalando dependências:
 
