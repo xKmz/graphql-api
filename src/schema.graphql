@@ -1,0 +1,32 @@
+"use strict"
+
+type User {
+  _id: ID!
+  name: String!
+  email: String!
+}
+
+type Appointment {
+  _id: ID!
+  date: String!
+  iniHour: String!
+  endHour: String!
+  userId: String!
+  user: [User!]
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID): User
+  appointments: [Appointment!]!
+  appointment(id: ID): [Appointment]!
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User
+  updateUser(id: ID, name: String, email: String): User
+  deleteUser(id: ID): User
+  createAppointment(date: String!, iniHour: String!, endHour: String!, userId: String!): Appointment
+  updateAppointment(id: ID, date: String, iniHour: String, endHour: String, userId: String): Appointment
+  deleteAppointment(id: ID): Appointment
+}

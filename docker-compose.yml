@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mongoapplication:
+    image: mongo
+    container_name: desafio-backend
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: desafio-backend
+    ports:
+      - 27017:27017
+
+  mongotests:
+    image: mongo
+    container_name: desafio-backend-tests
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: desafio-backend-tests
+    ports:
+      - 27018:27017
